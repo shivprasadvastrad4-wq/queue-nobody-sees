@@ -1,0 +1,61 @@
+{
+  "nextToken": 106,
+  "servedCount": 0,
+  "counters": [
+    {
+      "id": 1,
+      "name": "Counter 01",
+      "serviceMinutes": 4,
+      "active": true,
+      "queue": [
+        {
+          "token": 101,
+          "name": "shivprasad",
+          "priority": false,
+          "createdAt": "2026-11-25T05:44:25.045Z"
+        },
+        {
+          "token": 105,
+          "name": "shree",
+          "priority": false,
+          "createdAt": "2026-11-25T05:45:03.658Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Counter 02",
+      "serviceMinutes": 3,
+      "active": true,
+      "queue": [
+        {
+          "token": 102,
+          "name": "shrikanth",
+          "priority": false,
+          "createdAt": "2026-11-25T05:44:34.665Z"
+        },
+        {
+          "token": 104,
+          "name": "sumeeth",
+          "priority": false,
+          "createdAt": "2026-11-25T05:44:50.457Z"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Counter 03",
+      "serviceMinutes": 5,
+      "active": true,
+      "queue": [
+        {
+          "token": 103,
+          "name": "sidde gowda",
+          "priority": false,
+          "createdAt": "2026-11-25T05:44:45.549Z"
+        }
+      ]
+    }
+  ],
+  "servedHistory": []
+}

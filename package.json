@@ -1,0 +1,8 @@
+{
+  "name": "queue-nobody-sees",
+  "version": "1.0.0",
+  "description": "A beginner-friendly full-stack DSA queue management assignment",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node server.js" },
+  "dependencies": { "express": "^4.21.2" }
+}

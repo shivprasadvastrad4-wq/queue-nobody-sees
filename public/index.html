@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queue Nobody Sees | Smart Queue Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">Q</div><div><strong>queue<span>.</span></strong><small>QUEUE INTELLIGENCE</small></div></div>
+      <div class="side-label">WORKSPACE</div>
+      <a class="nav-item active" href="#overview"><span>▦</span> Overview</a>
+      <a class="nav-item" href="#counters"><span>▤</span> Live counters</a>
+      <a class="nav-item" href="#join"><span>＋</span> Get a token</a>
+      <div class="sidebar-bottom"><div class="status-dot"></div><span>System operational</span><small>DSA assignment project</small></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">SMART QUEUE MANAGEMENT</div><h1>Queue overview</h1><p class="subheading">See the wait. Understand the flow. Make every minute count.</p></div>
+        <div class="top-actions"><span class="live-pill"><i></i> LIVE SIMULATION</span><button class="icon-button" id="refreshBtn" title="Refresh">↻</button></div>
+      </header>
+
+      <section class="stats-grid" id="overview">
+        <article class="stat-card"><div class="stat-top"><span>People waiting</span><span class="stat-icon purple">◎</span></div><strong id="waitingCount">—</strong><small><span class="muted">Across all active queues</span></small></article>
+        <article class="stat-card"><div class="stat-top"><span>Customers served</span><span class="stat-icon green">✓</span></div><strong id="servedCount">—</strong><small><span class="positive">Completed today</span></small></article>
+        <article class="stat-card"><div class="stat-top"><span>Average estimated wait</span><span class="stat-icon orange">◷</span></div><strong><span id="averageWait">—</span><em> min</em></strong><small><span class="muted">Based on queue position</span></small></article>
+        <article class="stat-card"><div class="stat-top"><span>Active counters</span><span class="stat-icon blue">▥</span></div><strong id="activeCounters">—</strong><small><span class="muted">Ready to serve</span></small></article>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel counters-panel" id="counters">
+          <div class="panel-heading"><div><div class="eyebrow">OPERATIONS</div><h2>Live counter status</h2></div><span class="tiny-badge">AUTO-ASSIGN</span></div>
+          <div id="counterList" class="counter-list"><div class="loading">Loading counters…</div></div>
+        </div>
+
+        <div class="panel join-panel" id="join">
+          <div class="panel-heading"><div><div class="eyebrow">JOIN THE LINE</div><h2>Get your token</h2></div><span class="ticket-icon">▤</span></div>
+          <p class="panel-copy">Enter your name and we'll place you in the counter with the lowest estimated workload.</p>
+          <form id="tokenForm">
+            <label for="customerName">YOUR NAME</label>
+            <input id="customerName" maxlength="40" placeholder="e.g. Alex Morgan" required>
+            <label class="priority-option"><input type="checkbox" id="priority"><span><b>Priority request</b><small>Moves ahead of regular tokens in the selected queue.</small></span></label>
+            <button class="primary-button" type="submit">Generate my token <span>→</span></button>
+          </form>
+          <div id="tokenResult" class="token-result hidden"></div>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <div class="panel insight-panel">
+          <div class="panel-heading"><div><div class="eyebrow">QUEUE INTELLIGENCE</div><h2>Where is the bottleneck?</h2></div><span class="spark">✳</span></div>
+          <div id="insight" class="insight-box">Analyzing counter workloads…</div>
+          <div class="legend"><span><i class="legend-purple"></i> People waiting</span><span><i class="legend-orange"></i> Estimated workload</span></div>
+        </div>
+        <div class="panel history-panel">
+          <div class="panel-heading"><div><div class="eyebrow">RECENT ACTIVITY</div><h2>Recently served</h2></div></div>
+          <div id="historyList" class="history-list"><div class="empty-state">No customers served yet.</div></div>
+        </div>
+      </section>
+      <footer>QUEUE<span>.</span> Built with Queue, Priority Queue, Searching & Sorting · DSA Mini Project</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
