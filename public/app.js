@@ -99,6 +99,39 @@ $("tokenForm").addEventListener("submit", async event => {
   } catch (error) { showToast(error.message); }
 });
 
+$("resetBtn").addEventListener("click", async () => {
+  const confirmed = confirm(
+    "Are you sure you want to reset all tokens, counters and history?"
+  );
+
+  if (!confirmed) return;
+
+  try {
+    await api("/api/reset", { method: "POST" });
+    await refresh();
+    showToast("System reset successfully!");
+  } catch (error) {
+    showToast(error.message);
+  }
+});
+
+
 $("refreshBtn").addEventListener("click", refresh);
+
+$("resetBtn").addEventListener("click", async () => {
+  const confirmed = confirm("Are you sure you want to reset the entire queue system?");
+
+  if (!confirmed) return;
+
+  try {
+    await api("/api/reset", { method: "POST" });
+    $("tokenResult").classList.add("hidden");
+    await refresh();
+    showToast("System reset successfully!");
+  } catch (error) {
+    showToast(error.message);
+  }
+});
+
 refresh();
 setInterval(refresh, 7000);
